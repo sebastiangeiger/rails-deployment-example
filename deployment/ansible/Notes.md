@@ -23,3 +23,8 @@ Host rails-server
 
 # Ansible
   * Push to servers: `ansible-playbook playbook.yml -i hosts`
+
+
+# Questions
+
+  * task vs. role in ansible?

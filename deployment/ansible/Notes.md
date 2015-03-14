@@ -18,6 +18,7 @@ Host rails-server
 # Requirements
 
   * Ruby 2.1.3 from source
+  * Running Redis server
 
 
 # Ansible

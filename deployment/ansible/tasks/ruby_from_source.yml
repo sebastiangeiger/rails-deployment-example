@@ -1,0 +1,37 @@
+---
+# Stolen from: https://github.com/jgrowl/ansible-playbook-ruby-from-src
+# Ruby from source playbook
+- name: get currently installed ruby version
+  command: ruby -v
+  register: result
+  ignore_errors: True
+
+- name: upgrade
+  action: apt update_cache=yes upgrade=yes
+
+- name: install ruby dependencies
+  action: apt pkg=build-essential state=installed
+
+# Install correct version of ruby from source
+- name: ruby-from-src | ensure directory temporary ruby download directory is present
+  file: state=directory path=/usr/local/src
+
+- name: ruby-from-src | Download ruby source
+  get_url: url={{ ruby_url }} dest=/usr/local/src/ruby-{{ ruby_version }}.tar.gz
+  when: result.rc !=0 or result.stdout.split()[1] != ruby_version_with_patch
+
+- name: ruby-from-src | ensure ruby is extracted
+  command: tar -xf ruby-{{ ruby_version }}.tar.gz chdir=/usr/local/src creates=/usr/local/src/ruby-{{ ruby_version }}
+  when: result.rc !=0 or result.stdout.split()[1] != ruby_version_with_patch
+
+- name: ruby-from-src | ensure ruby is configured
+  command: ./configure chdir=/usr/local/src/ruby-{{ ruby_version }} creates=/usr/local/src/ruby-{{ ruby_version }}/Makefile
+  when: result.rc !=0 or result.stdout.split()[1] != ruby_version_with_patch
+
+- name: ruby-from-src | ensure ruby is compiled
+  command: make chdir=/usr/local/src/ruby-{{ ruby_version }} creates=/usr/local/src/ruby-{{ ruby_version }}/ruby
+  when: result.rc !=0 or result.stdout.split()[1] != ruby_version_with_patch
+
+- name: ruby-from-src | ensure ruby is installed
+  command: make install chdir=/usr/local/src/ruby-{{ ruby_version }} creates=/usr/local/bin/ruby
+  when: result.rc !=0 or result.stdout.split()[1] != ruby_version_with_patch

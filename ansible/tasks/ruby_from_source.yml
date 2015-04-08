@@ -6,11 +6,8 @@
   register: result
   ignore_errors: True
 
-- name: upgrade
-  action: apt update_cache=yes upgrade=yes
-
 - name: install ruby dependencies
-  action: apt pkg=build-essential state=installed
+  action: apt pkg=build-essential=11.6ubuntu6 state=present update_cache=yes
 
 # Install correct version of ruby from source
 - name: ruby-from-src | ensure directory temporary ruby download directory is present

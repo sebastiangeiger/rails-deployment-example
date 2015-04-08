@@ -1,0 +1,35 @@
+I, [2015-04-08T09:51:19.442170 #76267]  INFO -- Kitchen: -----> Starting Kitchen (v1.3.1)
+E, [2015-04-08T09:51:19.711681 #76267] ERROR -- Kitchen: ------Exception-------
+E, [2015-04-08T09:51:19.711747 #76267] ERROR -- Kitchen: Class: Kitchen::ClientError
+E, [2015-04-08T09:51:19.711770 #76267] ERROR -- Kitchen: Message: Could not load the 'ansible_playbook' provisioner from the load path. Please ensure that your provisioner is installed as a gem or included in your Gemfile if using Bundler.
+E, [2015-04-08T09:51:19.711791 #76267] ERROR -- Kitchen: ---Nested Exception---
+E, [2015-04-08T09:51:19.711811 #76267] ERROR -- Kitchen: Class: LoadError
+E, [2015-04-08T09:51:19.711830 #76267] ERROR -- Kitchen: Message: cannot load such file -- kitchen/provisioner/ansible_playbook
+E, [2015-04-08T09:51:19.711849 #76267] ERROR -- Kitchen: ------Backtrace-------
+E, [2015-04-08T09:51:19.711869 #76267] ERROR -- Kitchen: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/provisioner.rb:46:in `rescue in for_plugin'
+E, [2015-04-08T09:51:19.711889 #76267] ERROR -- Kitchen: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/provisioner.rb:40:in `for_plugin'
+E, [2015-04-08T09:51:19.711908 #76267] ERROR -- Kitchen: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/config.rb:277:in `new_provisioner'
+E, [2015-04-08T09:51:19.711931 #76267] ERROR -- Kitchen: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/config.rb:244:in `new_instance'
+E, [2015-04-08T09:51:19.711951 #76267] ERROR -- Kitchen: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/config.rb:129:in `block in build_instances'
+E, [2015-04-08T09:51:19.711971 #76267] ERROR -- Kitchen: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/config.rb:128:in `map'
+E, [2015-04-08T09:51:19.711990 #76267] ERROR -- Kitchen: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/config.rb:128:in `with_index'
+E, [2015-04-08T09:51:19.712028 #76267] ERROR -- Kitchen: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/config.rb:128:in `build_instances'
+E, [2015-04-08T09:51:19.712048 #76267] ERROR -- Kitchen: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/config.rb:104:in `instances'
+E, [2015-04-08T09:51:19.712068 #76267] ERROR -- Kitchen: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/command.rb:115:in `filtered_instances'
+E, [2015-04-08T09:51:19.712087 #76267] ERROR -- Kitchen: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/command.rb:145:in `parse_subcommand'
+E, [2015-04-08T09:51:19.712107 #76267] ERROR -- Kitchen: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/command/test.rb:43:in `block in call'
+E, [2015-04-08T09:51:19.712130 #76267] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/2.1.0/benchmark.rb:279:in `measure'
+E, [2015-04-08T09:51:19.712154 #76267] ERROR -- Kitchen: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/command/test.rb:41:in `call'
+E, [2015-04-08T09:51:19.712182 #76267] ERROR -- Kitchen: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/cli.rb:56:in `perform'
+E, [2015-04-08T09:51:19.712212 #76267] ERROR -- Kitchen: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/cli.rb:209:in `test'
+E, [2015-04-08T09:51:19.712233 #76267] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/command.rb:27:in `run'
+E, [2015-04-08T09:51:19.712253 #76267] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/invocation.rb:126:in `invoke_command'
+E, [2015-04-08T09:51:19.712273 #76267] ERROR -- Kitchen: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/cli.rb:304:in `invoke_task'
+E, [2015-04-08T09:51:19.712293 #76267] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor.rb:359:in `dispatch'
+E, [2015-04-08T09:51:19.712312 #76267] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/base.rb:440:in `start'
+E, [2015-04-08T09:51:19.712332 #76267] ERROR -- Kitchen: /opt/chefdk/embedded/apps/test-kitchen/bin/kitchen:13:in `block in <top (required)>'
+E, [2015-04-08T09:51:19.712352 #76267] ERROR -- Kitchen: /opt/chefdk/embedded/apps/test-kitchen/lib/kitchen/errors.rb:154:in `with_friendly_errors'
+E, [2015-04-08T09:51:19.712449 #76267] ERROR -- Kitchen: /opt/chefdk/embedded/apps/test-kitchen/bin/kitchen:13:in `<top (required)>'
+E, [2015-04-08T09:51:19.712472 #76267] ERROR -- Kitchen: /usr/bin/kitchen:15:in `load'
+E, [2015-04-08T09:51:19.712491 #76267] ERROR -- Kitchen: /usr/bin/kitchen:15:in `<main>'
+E, [2015-04-08T09:51:19.712510 #76267] ERROR -- Kitchen: ----------------------

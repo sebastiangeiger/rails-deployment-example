@@ -13,7 +13,7 @@ Host rails-server
 
   * Make sure you can `ssh rails-server` with publickey
 
-  * `ansible -i hosts -m ping` should be a success
+  * `ansible -i hosts -m ping rails-server` should be a success
 
 # Requirements
 

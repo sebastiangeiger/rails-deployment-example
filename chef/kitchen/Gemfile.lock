@@ -1,6 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    kitchen-vagrant (0.16.0)
+      test-kitchen (~> 1.0)
     mixlib-shellout (2.0.1)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -18,4 +20,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  kitchen-vagrant
   test-kitchen

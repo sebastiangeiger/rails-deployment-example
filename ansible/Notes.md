@@ -25,6 +25,13 @@ Host rails-server
   * Push to servers: `ansible-playbook playbook.yml -i hosts`
 
 
-# Questions
+## Jargon
+
+  * A `playbook` determines what should be installed
+  * A `task` allows you to take a part from a `playbook` and break it out into
+    it's own component. Playbooks include tasks to get their functionality.
+  * A `handler` is a specialized `task`
+## Questions
 
   * task vs. role in ansible?
+  * Can I use test-kitchen to TDD the infrastructure?

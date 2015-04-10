@@ -7,6 +7,9 @@ provisioner:
 
 platforms:
   - name: ubuntu-12.04
+  - name: centos-6.5
+    driver:
+      box_url: https://github.com/2creatives/vagrant-centos/releases/download/v6.5.3/centos65-x86_64-20140116.box
 
 suites:
   - name: default

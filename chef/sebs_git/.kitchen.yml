@@ -1,0 +1,17 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: ubuntu-12.04-fast
+    driver:
+      box_url: file:///Users/seb/projects/fast-kitchen-box/package.box
+
+suites:
+  - name: default
+    run_list:
+      - recipe[sebs_git::default]
+    attributes:

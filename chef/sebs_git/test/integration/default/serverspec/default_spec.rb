@@ -2,11 +2,8 @@ require 'spec_helper'
 
 describe 'sebs_git::default' do
 
-  # Serverspec examples can be found at
-  # http://serverspec.org/resource_types.html
-  
-  it 'does something' do
-    skip 'Replace this with meaningful tests'
+  describe command('git --version') do
+    its(:stdout) { should match /git version 1\.7\./ }
   end
 
 end

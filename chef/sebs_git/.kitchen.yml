@@ -15,3 +15,7 @@ suites:
     run_list:
       - recipe[sebs_git::default]
     attributes:
+  - name: server
+    run_list:
+      - recipe[sebs_git::server]
+    attributes:

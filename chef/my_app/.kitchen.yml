@@ -6,8 +6,9 @@ provisioner:
   name: chef_zero
 
 platforms:
-  - name: ubuntu-12.04
-  - name: centos-6.5
+  - name: ubuntu-12.04-fast
+    driver:
+      box_url: file:///Users/seb/projects/fast-kitchen-box/package.box
 
 suites:
   - name: default

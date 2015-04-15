@@ -18,6 +18,5 @@ describe 'my_app::default' do
     it 'converges successfully' do
       chef_run # This should not raise an error
     end
-
   end
 end

@@ -6,3 +6,4 @@ description      'Installs/Configures my_app'
 long_description 'Installs/Configures my_app'
 version          '0.1.0'
 
+depends 'apt'

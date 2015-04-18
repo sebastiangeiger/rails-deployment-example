@@ -7,3 +7,4 @@ long_description 'Installs/Configures my_app'
 version          '0.1.0'
 
 depends 'apt'
+depends 'postgresql', '~> 3.4.18'

@@ -41,6 +41,19 @@ describe 'my_app::default' do
   end
 
   describe "Rails deployment" do
+    describe user('deploy') do
+      it { should exist }
+      it { should belong_to_group 'deploy' }
+    end
+
+    describe group('deploy') do
+      it { should exist }
+    end
+
+    describe file('/var/www/rails_sample_app/current/app') do
+      it { should be_directory }
+    end
+
     describe file('/var/www/rails_sample_app/current/app/models/message.rb') do
       it { should be_file }
     end

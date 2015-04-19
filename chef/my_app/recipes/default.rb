@@ -11,7 +11,4 @@ deploy "/var/www/rails_sample_app" do
   environment "RAILS_ENV" => "production"
   revision "HEAD"
   action :deploy
-  create_dirs_before_symlink  %w{tmp public config deploy}
-
-  symlink_before_migrate  "config/database.yml" => "config/database.yml"
 end

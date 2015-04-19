@@ -6,6 +6,10 @@ describe 'my_app::default' do
     its(:stdout) { should match /^ruby\ 2\.1\.6/ }
   end
 
+  describe command('git --version') do
+    its(:stdout) { should include "git version 2.3.5" }
+  end
+
   describe "PostgreSQL" do
     describe user('postgres') do
       it { should exist }

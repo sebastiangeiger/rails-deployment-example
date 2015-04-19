@@ -7,6 +7,14 @@ describe 'my_app::default' do
   end
 
   describe "PostgreSQL" do
+    describe user('postgres') do
+      it { should exist }
+    end
+
+    describe group('postgres') do
+      it { should exist }
+    end
+
     describe process("postgres") do
       it { should be_running }
       its(:cmd) { should include "/postgresql/9.1/bin/postgres\s" }
@@ -15,6 +23,8 @@ describe 'my_app::default' do
         version_query = "#{binary} --version"
         expect(command(version_query).stdout).to match /9\.1\.\d+/
       end
+      its(:user) { should eq "postgres" }
+      its(:group) { should eq "postgres" }
     end
 
     describe port(5432) do

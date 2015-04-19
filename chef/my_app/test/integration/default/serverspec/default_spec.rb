@@ -39,4 +39,10 @@ describe 'my_app::default' do
       its(:exit_status) { should eq 0 }
     end
   end
+
+  describe "Rails deployment" do
+    describe file('/var/www/rails_sample_app/current/app/models/message.rb') do
+      it { should be_file }
+    end
+  end
 end

@@ -11,3 +11,6 @@
 ### Speed up tests
   - https://github.com/sebastiangeiger/fast-kitchen-box
   - Install more of the serverspec gems into the box?
+
+### Misc
+  - `sudo su` then `su deploy`

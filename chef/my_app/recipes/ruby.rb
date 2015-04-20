@@ -9,3 +9,4 @@ apt_repository "brightbox-ruby-ng" do
 end
 
 package "ruby2.1"
+package "ruby2.1-dev"

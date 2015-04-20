@@ -41,6 +41,10 @@ describe 'my_app::default' do
   end
 
   describe "Rails deployment" do
+    describe package('bundler') do
+      it { should be_installed.by('gem') }
+    end
+
     describe user('deploy') do
       it { should exist }
       it { should belong_to_group 'deploy' }
@@ -59,5 +63,16 @@ describe 'my_app::default' do
     describe file('/var/www/rails_sample_app/current/app/models/message.rb') do
       it { should be_file }
     end
+
+    describe file('/var/www/rails_sample_app/current/bundle') do
+      it { should be_directory }
+    end
+
+    describe file('/var/www/rails_sample_app/current/bundle/ruby/2.1.0/gems') do
+      it { should be_directory }
+      it { should be_owned_by 'deploy' }
+      it { should be_grouped_into 'deploy' }
+    end
+
   end
 end

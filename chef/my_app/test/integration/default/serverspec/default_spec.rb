@@ -52,6 +52,8 @@ describe 'my_app::default' do
 
     describe file('/var/www/rails_sample_app/current/app') do
       it { should be_directory }
+      it { should be_owned_by 'deploy' }
+      it { should be_grouped_into 'deploy' }
     end
 
     describe file('/var/www/rails_sample_app/current/app/models/message.rb') do

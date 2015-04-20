@@ -15,4 +15,6 @@ deploy "/var/www/rails_sample_app" do
   environment "RAILS_ENV" => "production"
   revision "HEAD"
   action :deploy
+  user 'deploy'
+  group 'deploy'
 end

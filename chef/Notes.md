@@ -31,3 +31,13 @@
 
 ### Misc
   - `sudo su` then `su deploy`
+
+### Sources
+
+  - http://chr4.org/blog/2013/07/31/chef-deploy-revision-and-capistrano-git-style/
+  - https://gist.github.com/finack/2055725
+  - https://docs.chef.io/resource_gem_package.html
+  - http://railscasts.com/episodes/335-deploying-to-a-vps
+  - https://docs.chef.io/resource_deploy.html
+  - http://serverspec.org/resource_types.html
+  - https://github.com/3ofcoins/chef-cookbook-ruby-ng

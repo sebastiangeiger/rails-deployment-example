@@ -38,6 +38,10 @@ describe 'my_app::default' do
     describe command('which psql') do
       its(:exit_status) { should eq 0 }
     end
+
+    describe command('sudo -u postgres psql --list') do
+      its(:stdout) { should contain 'rails_deployment_example_production' }
+    end
   end
 
   describe "Rails deployment" do

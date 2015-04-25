@@ -11,6 +11,11 @@ user "deploy" do
   action :create
 end
 
+execute 'create database' do
+  user 'postgres'
+  command "createdb rails_deployment_example_production"
+end
+
 gem_package 'bundler'
 
 deploy "/var/www/rails_sample_app" do

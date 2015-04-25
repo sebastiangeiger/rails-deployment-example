@@ -39,7 +39,7 @@ describe 'my_app::default' do
       its(:exit_status) { should eq 0 }
     end
 
-    describe command('sudo -u postgres psql --list') do
+    describe command('sudo -u deploy psql --list') do
       its(:stdout) { should contain 'rails_deployment_example_production' }
     end
   end

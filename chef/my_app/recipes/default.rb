@@ -11,9 +11,15 @@ user "deploy" do
   action :create
 end
 
+execute 'create user role' do
+  user 'postgres'
+  command "createuser --no-createdb --login --no-createrole --no-superuser deploy"
+end
+
 execute 'create database' do
   user 'postgres'
-  command "createdb rails_deployment_example_production"
+  command "createdb --owner deploy rails_deployment_example_production"
+  not_if { `sudo -u postgres psql --list`.include? "rails_deployment_example_production" }
 end
 
 gem_package 'bundler'

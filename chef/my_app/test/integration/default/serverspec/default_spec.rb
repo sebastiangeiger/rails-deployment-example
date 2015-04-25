@@ -74,5 +74,8 @@ describe 'my_app::default' do
       it { should be_grouped_into 'deploy' }
     end
 
+    describe command('node --version') do
+      its(:stdout) { should match /v0\.6\.\d+/ }
+    end
   end
 end

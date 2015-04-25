@@ -7,7 +7,7 @@ describe 'my_app::default' do
   end
 
   describe command('git --version') do
-    its(:stdout) { should include "git version 2.3.5" }
+    its(:stdout) { should match /^git version 2\.3\.\d+$/ }
   end
 
   describe "PostgreSQL" do

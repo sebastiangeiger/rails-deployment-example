@@ -42,6 +42,11 @@ describe 'my_app::default' do
     describe command('sudo -u deploy psql --list') do
       its(:stdout) { should contain 'rails_deployment_example_production' }
     end
+
+    # A different user can't see the database
+    describe command('sudo -u vagrant psql --list') do
+      its(:stdout) { should_not contain 'rails_deployment_example_production' }
+    end
   end
 
   describe "Rails deployment" do

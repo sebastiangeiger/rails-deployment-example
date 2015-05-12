@@ -6,3 +6,4 @@ description      'Installs/Configures my_app_docker'
 long_description 'Installs/Configures my_app_docker'
 version          '0.1.0'
 
+depends 'docker', '~> 0.37.0'
